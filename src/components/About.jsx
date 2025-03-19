@@ -19,7 +19,6 @@ const About = () => {
     const position = [14, 38, 62, 86];
     const rotation = [-10, -5, 5, 10];
 
-    // Create the pin for the cards section
     const pinTrigger = ScrollTrigger.create({
       trigger: container.current.querySelector(".cards"),
       start: "top top",
