@@ -51,11 +51,9 @@ const About = () => {
       );
     });
 
-    // Create separate flip animations for each card
     cards.forEach((card, index) => {
       const flipCard = card.querySelector(".flip-card-inner");
 
-      // First, ensure the transition property is removed (it's set to 'none' in CSS)
       gsap.set(flipCard, {
         transition: "none",
         transformStyle: "preserve-3d",
