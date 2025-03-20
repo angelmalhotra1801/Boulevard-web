@@ -1,5 +1,6 @@
 import Lenis from "https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/dist/lenis.min.mjs";
 
+
 document.addEventListener("DOMContentLoaded", () => {
   const lenis = new Lenis();
   lenis.on("scroll", ScrollTrigger.update);

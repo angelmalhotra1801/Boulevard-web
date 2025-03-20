@@ -7,8 +7,7 @@ import SLIDE2 from "../assets/bannerImg/5.png";
 import SLIDE3 from "../assets/bannerImg/6.png";
 import SLIDE4 from "../assets/bannerImg/7.png";
 import SLIDE5 from "../assets/bannerImg/8.png";
-import SLIDE6 from "../assets/bannerImg/9.png";
-import SLIDE7 from "../assets/bannerImg/10.png";
+
 
 const SectionWrapper = styled.section`
   min-height: 100vh;
@@ -56,7 +55,7 @@ const Banner = () => {
 
       <LeftContainer data-scroll data-scroll-delay=".15" data-scroll-speed="2">
         <div className="items">
-          {[SLIDE, SLIDE1, SLIDE2, SLIDE3, SLIDE4, SLIDE5, SLIDE6, SLIDE7].map(
+          {[SLIDE, SLIDE1, SLIDE2, SLIDE3, SLIDE4, SLIDE5].map(
             (image, index) => (
               <div key={index} className="entry">
                 <img src={image} alt={`Slide ${index + 1}`} className="slide" />
