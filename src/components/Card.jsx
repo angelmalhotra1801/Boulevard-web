@@ -1,28 +1,25 @@
-import { forwardRef } from "react";
+"use client";
+import React, { forwardRef } from "react";
 
-const Card = forwardRef(({ id, frontSrc, frontAlt, backText }, ref) => {
+const Card = forwardRef(({ frontSrc, frontAlt, backText }, ref) => {
   return (
-    <div className="card" id={id} ref={ref}>
-      <div className="card-wrapper">
-        <div className="flip-card-inner">
-          <div className="flip-card-front">
-            <img
-              src={frontSrc || "/placeholder.svg?height=400&width=300"}
-              width="300"
-              height="400"
-              alt={frontAlt}
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-          </div>
-          <div className="flip-card-back">
-            <p className="text-black text-center text-lg">{backText}</p>
-          </div>
+    <div
+      ref={ref}
+      className="card flip-card relative w-72 h-96 rounded-lg overflow-hidden shadow-xl bg-gray-900"
+    >
+      <div className="flip-card-inner w-full h-full">
+        {/* Front Side */}
+        <div className="flip-card-front absolute w-full h-full bg-cover bg-center">
+          <img src={frontSrc} alt={frontAlt} className="w-full h-full" />
+        </div>
+
+        {/* Back Side */}
+        <div className="flip-card-back absolute w-full h-full bg-indigo-700 flex items-center justify-center text-white text-xl font-bold transform rotate-y-180">
+          {backText}
         </div>
       </div>
     </div>
   );
 });
-
-Card.displayName = "Card";
 
 export default Card;

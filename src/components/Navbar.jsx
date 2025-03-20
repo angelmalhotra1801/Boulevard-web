@@ -4,7 +4,6 @@ import { TiLocationArrow } from "react-icons/ti";
 import Button from "./Button";
 import { useWindowScroll } from "react-use";
 import { Link } from "react-router-dom";
-import About from "./About"
 
 
 const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];

@@ -1,12 +1,16 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import Lenis from "@studio-freight/lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ParallaxScene from "./components/ParallaxScene";
 import ParallaxCursor from "./components/ParallaxCursor";
+import Preloader from "./components/Preloader";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
-import About from "./components/About";
+import Banner from "./components/Banner";
+import Story from "./components/Story";
+import Marquee from "./components/Marquee"; // Adjust path if needed
 import Contact from "./components/Contact";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,6 +18,7 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const mainRef = useRef(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Create a smooth scroll effect using GSAP
@@ -75,6 +80,16 @@ function App() {
 
   return (
     <>
+      <div className="main" ref={mainRef}>
+        {" "}
+        <div className="relative">
+          {loading && <Preloader onFinish={() => setLoading(false)} />}
+
+          {!loading && (
+            <main className="min-h-screen flex items-center justify-center bg-black text-white"></main>
+          )}
+        </div>
+      </div>
       <Navbar setIsSidebarOpen={() => setIsSidebarOpen((prev) => !prev)} />
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
@@ -82,7 +97,17 @@ function App() {
         <div ref={mainRef} className="relative w-full h-screen overflow-hidden">
           <ParallaxScene />
         </div>
-        <About />
+        <div className="html-container">
+          <iframe
+            src="src/components/about.html"
+            width="100%"
+            height="600px"
+            style={{ border: "none" }}
+          />
+        </div>
+        <Banner />
+        <Story />
+        <Marquee />
         <Contact />
       </div>
 

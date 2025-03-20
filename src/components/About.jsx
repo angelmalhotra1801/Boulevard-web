@@ -97,7 +97,12 @@ const About = () => {
 
           <p className="text-lg text-blue-50">Into the metaGame Layer</p>
           <p className="max-w-md text-lg text-blue-50 opacity-50 mb-16">
-            Immerse yourself in a rich and ever-expanding universe...
+            In the year 3010, a group of genius college students accidentally
+            activate a time rift, throwing them into an ancient world where
+            magic and science collide. Stranded in a land ruled by a ruthless
+            Demon Overlord, they must battle mythical creatures, forge
+            alliances, and uncover the legendary Eon Core to restore time—or
+            reshape history forever.
           </p>
 
           <section className="cards relative h-[60vh]">
